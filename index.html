@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="assets/images/favicon.jpg" type="image/x-icon">
+    <link preload href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- #region NAV -->
+    <nav>
+        <h1>PRODUCTIVITY DASHBOARD</h1>
+        <div>
+            <i id="theme" onclick="themeToggle()" class="ri-moon-fill"></i>
+            <a href="https://github.com/Aashish2k1S" target="_blank"><i class="ri-github-fill"></i></a>
+        </div>
+    </nav>
+    <!-- #endregion NAV -->
+
+    <!-- #region DASHBOARD -->
+    <section class="main" id="dashboard">
+        <div class="middle">
+            <img src="assets/images/sunriseimg.jpg" id="dashboardImg" alt="">
+            <video src="assets/Videos/morning.mp4" id="dashboardVid" muted loop autoplay></video>
+        </div>
+
+        <div class="below">
+            <div class="card">
+                <div class="left">
+                    <div>
+                        <h4 class="date-year">5 July, 2026</h4>
+                        <h1 class="day-time">Sunday, 06:00:00 PM</h1>
+                    </div>
+                    <h3 class="location">Location</h3>
+                </div>
+                <div class="right">
+                    <div>
+                        <h2 class="temperature">31.2° C</h2>
+                        <h2 class="weather">Partly Cloudy nearby</h2>
+                    </div>
+                    <div>
+                        <h4 class="condition">Heat_Index: 35.6%</h4>
+                        <h4 class="humidity">Humidity: 60%</h4>
+                        <h4 class="wind">Wind: 19.8km/h</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div class="allFeatures">
+                <div class="todo elem" id="sE0" onclick="featureToggle(true, 'notes'); notesFeature('todo');">
+                    <img src="assets/images/todo-light.avif" alt="">
+                    <video src="assets/Videos/todo-video.mp4" muted loop autoplay in></video>
+                </div>
+                <div class="daily elem" id="sE1" onclick="featureToggle(true, 'plan')">
+                    <img src="assets/images/daily-planLight.jpg" alt="">
+                    <video src="assets/Videos/daily-plan.mp4" muted loop autoplay></video>
+                </div>
+                <div class="moti elem" id="sE2" onclick="featureToggle(true, 'quotes')">
+                    <img src="assets/images/moti-light.jpg" alt="">
+                    <video src="assets/Videos/motivate.mp4" muted loop autoplay></video>
+                </div>
+                <div class="pomo elem" id="sE3" onclick="featureToggle(true, 'timer')">
+                    <img src="assets/images/pomolight.jpeg" alt="">
+                    <video src="assets/Videos/pomo.mp4" muted loop autoplay></video>
+                </div>
+                <div class="goals elem" id="sE4" onclick="featureToggle(true, 'notes'); notesFeature('goal');">
+                    <img src="assets/images/goalsLight.avif" alt="">
+                    <video src="assets/Videos/goals.mp4" muted loop autoplay></video>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- #endregion DASHBOARD -->
+
+    <!-- #region TODO & GOALS -->
+    <section class="full-elem" id="notes">
+        <div class="top">
+            <h1>Your Personalised task List | Daily Goals</h1>
+            <i id="notesClose" class="close ri-close-large-fill" onclick="featureToggle()"></i>
+        </div>
+        <div class="below">
+            <div class="left">
+                <form action="">
+                    <div>
+                        <input type="text" name="noteTitle" id="noteTitle" placeholder="Enter note" required>
+                    </div>
+                    <div>
+                        <textarea name="noteDesc" id="noteDesc" rows="5" placeholder="Enter description"
+                            required></textarea>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="chkImp" id="chkImp">
+                        <label for="chkImp" id="lblImp">Mark as Important</label>
+                    </div>
+                    <button id="noteSubmit">Add Task | Goal</button>
+                </form>
+            </div>
+            <div class="right">
+                <div id="noNote"></div>
+                <div id="allTodo"></div>
+                <div id="allGoal"></div>
+            </div>
+        </div>
+    </section>
+    <!-- #endregion TODO & GOALS -->
+
+    <!-- #region DAILY PLAN -->
+    <section class="full-elem" id="plan">
+        <div class="top">
+            <h1>Plan your Day to be more Productivity</h1>
+            <i id="planClose" class="close ri-close-large-fill" onclick="featureToggle()"></i>
+        </div>
+        <div class="below">
+            <div class="plan-table"></div>
+        </div>
+
+    </section>
+    <!-- #endregion DAILY PLAN -->
+
+    <!-- #region QUOTES -->
+    <section class="full-elem" id="quotes">
+        <div class="top">
+            <i id="quotesClose" class="close ri-close-large-fill" onclick="featureToggle()"></i>
+        </div>
+        <div class="below">
+            <div class="quote">
+                <div class="quote-top">
+                    <p>Quote of the Day</p>
+                    <img src="assets/images/icons8-get-quote-100.png" alt="">
+                </div>
+                <p class="quote-desc"></p>
+                <div class="quote-below">
+                    <p class="quote-author"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- #endregion QUOTES -->
+
+    <!-- #region TIMER -->
+    <section class="full-elem" id="timer">
+        <div class="top">
+            <h1>Study with me!</h1>
+            <i id="timerClose" class="close ri-close-large-fill" onclick="featureToggle()"></i>
+        </div>
+        <div class="below">
+            <div class="timerTop">
+                <h1>Work Session</h1>
+            </div>
+            <div class="timerBelow">
+                <div class="timer-time">
+                    25:00
+                </div>
+                <div class="timeBtns">
+                    <button class="btns timerStartBtn">Start</button>
+                    <button class="btns timerPauseBtn">Pause</button>
+                    <button class="btns timerResetBtn">Reset</button>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- #endregion TIMER -->
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
